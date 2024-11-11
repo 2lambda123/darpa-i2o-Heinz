@@ -1,6 +1,6 @@
-import random
 import numpy as np
 import torch
+import secrets
 
 torch_dtypes = {
     'float': torch.float,
@@ -47,4 +47,4 @@ def set_global_seeds(i):
         if torch.cuda.is_available():
             torch.cuda.manual_seed_all(i)
     np.random.seed(i)
-    random.seed(i)
+    secrets.SystemRandom().seed(i)
